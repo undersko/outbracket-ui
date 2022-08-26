@@ -1,0 +1,117 @@
+.toast {
+  transform: translateX(300px);
+  transition: transform 500ms ease-out;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: -4px 5px 5px -4px $color_black;
+  margin: 0 0 10px 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.error {
+    background-color: $color_light_red;
+    color: $color_red;
+
+    svg path {
+      fill: $color_black;
+    }
+
+    .iconContainer {
+      background-color: $color_red;
+    }
+  }
+  &.warning {
+    background-color: $color_light_orange;
+    color: $color_orange;
+
+    svg path {
+      fill: $color_black;
+    }
+
+    .iconContainer {
+      background-color: $color_orange;
+    }
+  }
+  &.info {
+    background-color: $color_white;
+    color: $color_blue;
+
+    svg path {
+      fill: $color_black;
+    }
+
+    .iconContainer {
+      background-color: $color_blue;
+    }
+  }
+  &.success {
+    background-color: $color_light_green;
+    color: $color_green;
+
+    svg path {
+      fill: $color_black;
+    }
+
+    .iconContainer {
+      background-color: $color_green;
+    }
+  }
+
+  &.entering {
+    transform: translateX(300px);
+  }
+  &.entered {
+    transform: translateX(0);
+  }
+  &.exiting {
+    transform: translateX(300px);
+  }
+  &.exited {
+    transform: translateX(300px);
+  }
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.iconContainer {
+  padding: 5px 5px 0 5px;
+}
+
+.bodyContainer {
+  line-height: 1.4;
+  min-height: 40px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 200px;
+  overflow-wrap: break-word;
+}
+
+.buttonContainer {
+  padding: 2px 5px 0 5px;
+
+  button {
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+    line-height: 0.7;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    color: $color_light_grey;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

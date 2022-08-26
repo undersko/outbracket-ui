@@ -1,0 +1,11 @@
+.svg {
+  color: inherit;
+
+  path {
+    fill: currentColor;
+  }
+
+  :global(use) {
+    pointer-events: none;
+  }
+}

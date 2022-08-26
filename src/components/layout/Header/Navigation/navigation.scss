@@ -1,0 +1,99 @@
+@import './src/styles/variables', './src/styles/mixins/for-size', './src/styles/mixins/placeholder';
+
+.nav {
+  font-size: 1.5em;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+
+  &.row {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 0 0 14px;
+    height: 40px;
+    margin: 0;
+
+    &:hover {
+      .link > div > a {
+        opacity: 0.3;
+      }
+
+      .link > a {
+        opacity: 0.3;
+      }
+    }
+
+    .link {
+      padding-right: 1.32813vw;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      white-space: nowrap;
+      text-align: left;
+      margin-bottom: 0;
+
+      &:hover {
+        div > a {
+          opacity: 1;
+        }
+
+        a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.linkA {
+  color: $color_black;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  @include for-size(tablet-portrait-up) {
+    font-size: $medium_size;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    font-size: $large_size;
+  }
+
+  @include for-size(desktop-up) {
+    font-size: $x_large_size;
+  }
+}
+
+.linkIcon {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  background-color: $color_black;
+  margin-right: 5px;
+  top: 0.3vw;
+  border-radius: 50%;
+
+  @include for-size(desktop-up) {
+    width: 0.7em;
+    height: 0.7em;
+    top: 0;
+    margin-right: 15px;
+  }
+}

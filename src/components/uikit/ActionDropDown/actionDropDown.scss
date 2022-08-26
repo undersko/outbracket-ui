@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+}
+
+.optionsContainer {
+  right: 0;
+  top: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: z-index 500ms ease-out;
+  transition: opacity 500ms ease-out;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px 0 black;
+  padding: 5px;
+  max-width: 200px;
+
+  &.unmounted {
+    opacity: 0;
+    z-index: -1;
+  }
+  &.entering {
+    opacity: 0.5;
+    z-index: -1;
+  }
+  &.entered {
+    opacity: 1;
+    z-index: 0;
+  }
+  &.exiting {
+    opacity: 0.5;
+    z-index: 0;
+  }
+  &.exited {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+.option {
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: padding 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    border-left: 5px solid black;
+    padding-left: 20px;
+  }
+}

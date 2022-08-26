@@ -1,0 +1,23 @@
+@import './src/styles/variables', './src/styles/mixins/for-size', './src/styles/mixins/placeholder';
+
+.container {
+  padding: 20px 15px 10px 15px;
+
+  > h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include for-size(tablet-portrait-up) {
+      font-size: $medium_size;
+    }
+
+    @include for-size(tablet-landscape-up) {
+      font-size: $large_size;
+    }
+
+    @include for-size(desktop-up) {
+      font-size: $x_large_size;
+    }
+  }
+}

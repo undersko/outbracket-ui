@@ -1,0 +1,37 @@
+@import './src/styles/variables', './src/styles/mixins/for-size', './src/styles/mixins/placeholder';
+
+.logo {
+  cursor: pointer;
+
+  @include for-size(phone-only) {
+    width: $large_size;
+    height: $large_size;
+  }
+
+  @include for-size(tablet-portrait-up) {
+    width: $x_large_size;
+    height: $x_large_size;
+  }
+
+  @include for-size(desktop-up) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.logoContainer {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding-right: 15px;
+
+  span {
+    font-weight: bolder;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

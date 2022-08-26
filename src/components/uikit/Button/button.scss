@@ -1,0 +1,14 @@
+.button {
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  color: $color_white;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  height: 50px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: $color_black;
+  border-color: $color_black;
+}

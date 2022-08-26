@@ -1,0 +1,59 @@
+@import './src/styles/variables', './src/styles/mixins/for-size', './src/styles/mixins/placeholder';
+
+.container {
+  padding-right: 26px;
+  padding-left: 26px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.desktopOnlyContainer {
+  display: flex;
+  height: 95px;
+  @include for-size(phone-only) {
+    display: none;
+  }
+}
+
+.separatedBlock {
+  display: flex;
+  &:nth-child(2n + 2) {
+    flex: 0 0 60%;
+  }
+  &:nth-child(2n + 1) {
+    flex: 0 0 16%;
+  }
+  &:last-child {
+    margin-left: auto;
+  }
+  .innerBlockContainer {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.logoColumn {
+  justify-content: left;
+}
+
+.navigationColumn {
+  justify-content: center;
+}
+
+.authColumn {
+  justify-content: flex-end;
+}
+
+.separator {
+  @include for-size(phone-only) {
+    height: $x_large_size;
+  }
+
+  @include for-size(tablet-portrait-up) {
+    height: 2.5rem;
+  }
+
+  @include for-size(desktop-up) {
+    height: $xx_large_size;
+  }
+}

@@ -1,0 +1,54 @@
+.textareaContainer {
+  display: block;
+  .ribbon {
+    border-left: 10px solid $color_black;
+    font-size: 16px;
+    padding-left: $medium_size;
+    position: relative;
+  }
+  .default {
+    border-left: none;
+  }
+}
+
+.formControl {
+  composes: formControl from '../shared/styles.scss';
+
+  height: 86px;
+  box-sizing: border-box;
+  border-color: $color_black;
+  border-left-width: 0;
+  border-radius: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 2px;
+  color: $color_black;
+  font-size: 14px;
+  padding-left: 0;
+  resize: vertical;
+
+  @include placeholder {
+    color: $color_grey;
+    font-size: 14px;
+  }
+}
+
+.formControl:focus {
+  border-color: $color_black;
+  box-shadow: none;
+  color: $color_black;
+  outline: 0;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+
+  @include for-size(tablet-portrait-up) {
+    font-size: $small_size;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    font-size: $medium_size;
+  }
+}

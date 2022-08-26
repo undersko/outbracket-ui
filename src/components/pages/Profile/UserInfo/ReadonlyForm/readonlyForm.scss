@@ -1,0 +1,49 @@
+@import './src/styles/variables', './src/styles/mixins/for-size';
+
+.container {
+  position: relative;
+
+  .editIcon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+.form {
+  padding: 26px 0 20px 0;
+}
+
+.infoBlock {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px solid $color_light_grey_2;
+  box-shadow: 0 2px $color_light_grey_2;
+
+  .title {
+    flex: 0 0 100px;
+    font-weight: bold;
+    line-height: 20px;
+
+    @include for-size(tablet-portrait-up) {
+      font-size: $small_size;
+    }
+
+    @include for-size(tablet-landscape-up) {
+      font-size: $medium_size;
+    }
+
+    @include for-size(desktop-up) {
+      font-size: $x_medium_size;
+    }
+  }
+
+  .info {
+    flex: 1 1;
+    word-break: break-word;
+    line-height: 20px;
+  }
+}

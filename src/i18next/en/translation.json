@@ -1,0 +1,60 @@
+{
+  "common": {
+    "unhandledException": "unhandled exception",
+    "error": "error",
+    "success": "success",
+    "congratulations": "Congratulations",
+    "reset": "reset",
+    "create": "create",
+    "save": "save"
+  },
+  "tournaments": {
+    "title": "Tournaments"
+  },
+  "new_tournament": {
+    "title": "tournament"
+  },
+  "new_event": {
+    "title": "event"
+  },
+  "new_community": {
+    "title": "community"
+  },
+  "calendar": {
+    "title": "Calendar"
+  },
+  "communities": {
+    "title": "Communities"
+  },
+  "login": {
+    "iAlreadyHaveAnAccount": "I already have an account",
+    "signUp": "Sign up",
+    "dontHaveAnAccount": "Don't have an account?",
+    "haveAnAccount": "Already have an account?",
+    "registration": "Registration",
+    "email": "email",
+    "username": "username",
+    "password": "password",
+    "passwordConfirmation": "password confirmation",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "invalidEmail": "Invalid email",
+    "emptyEmail": "No email provided",
+    "emptyPassword": "No password provided",
+    "passwordAreDifferent": "Password Confirmation doesn't match Password",
+    "remindMyPassword": "Remind my password",
+    "changeYourPassword": "Change your password",
+    "registrationSuccessMessage": "A link to confirm registration has been sent to {{email}}",
+    "passwordMinLengthValidationError": "Password should contain minimum {{number}} characters",
+    "remindPasswordSuccessMessage": "A link to reset your password has been sent to {{email}}",
+    "send": "Send",
+    "resetPassword": "Reset password",
+    "profile": "Profile"
+  },
+  "profile": {
+    "hello": "Hello",
+    "about": "About",
+    "country": "Country",
+    "selectFile": "Select file"
+  }
+}

@@ -1,0 +1,15 @@
+export const PAGES = {
+  HOME: '/',
+  LOGIN: 'login/',
+  PROFILE: 'profile/',
+  TOURNAMENTS: 'tournaments/',
+  CALENDAR: 'calendar/',
+  COMMUNITIES: 'communities/',
+  REGISTRATION: 'registration/',
+  REMIND_PASSWORD: 'remind-password/',
+  CONFIRM_EMAIL: 'confirm-email/',
+  RESET_PASSWORD: 'reset-password/',
+  CREATE_TOURNAMENT: 'new-tournament/',
+  CREATE_EVENT: 'new-event/',
+  CREATE_COMMUNITY: 'new-community/',
+};

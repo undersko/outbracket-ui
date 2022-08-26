@@ -1,0 +1,83 @@
+.selectContainer {
+  display: block;
+
+  [class$='control'] {
+    background-color: transparent;
+    box-sizing: border-box;
+    box-shadow: none;
+    border-color: $color_black;
+    border-left-width: 0;
+    border-radius: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    padding-left: 0;
+
+    [class$='IndicatorsContainer'] {
+      span {
+        background-color: $color_black;
+      }
+
+      > div {
+        color: black;
+      }
+    }
+
+    [class$='ValueContainer'] {
+      padding: 0;
+      margin: 0;
+
+      [class$='placeholder'] {
+        color: $color_grey;
+        font-size: 14px;
+      }
+
+      input {
+        font-size: 14px;
+        color: $color_black;
+      }
+    }
+  }
+
+  [class$='control']:focus {
+    border-color: $color_black;
+    box-shadow: none;
+    color: $color_black;
+    outline: 0;
+  }
+
+  [class$='control']:hover {
+    border-color: $color_black;
+    box-shadow: none;
+    color: $color_black;
+    outline: 0;
+  }
+}
+
+.ribbon {
+  [class$='control'] {
+    border-left: 10px solid $color_black;
+    font-size: 16px;
+    padding-left: $medium_size;
+    position: relative;
+  }
+}
+
+.default {
+  [class$='control'] {
+    border-left: none;
+  }
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+
+  @include for-size(tablet-portrait-up) {
+    font-size: $small_size;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    font-size: $medium_size;
+  }
+}

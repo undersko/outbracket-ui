@@ -1,0 +1,60 @@
+{
+  "common": {
+    "unhandledException": "неизвестная ошибка",
+    "error": "ошибка",
+    "success": "успешно",
+    "congratulations": "Поздравляем",
+    "reset": "сбросить",
+    "create": "создать",
+    "save": "сохранить"
+  },
+  "tournaments": {
+    "title": "Туриниры"
+  },
+  "new_tournament": {
+    "title": "турнир"
+  },
+  "new_event": {
+    "title": "событие"
+  },
+  "new_community": {
+    "title": "сообщество"
+  },
+  "calendar": {
+    "title": "Календарь"
+  },
+  "communities": {
+    "title": "Сообщества"
+  },
+  "login": {
+    "iAlreadyHaveAnAccount": "Уже есть аккаунт",
+    "signUp": "Логин",
+    "dontHaveAnAccount": "Нет аккаунта?",
+    "haveAnAccount": "Уже есть аккаунт?",
+    "registration": "Регистрация",
+    "email": "email",
+    "username": "логин",
+    "password": "пароль",
+    "passwordConfirmation": "пароль подтвержден",
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "invalidEmail": "Невалидный email",
+    "emptyEmail": "email не заполнен",
+    "emptyPassword": "Пароль не заполнен",
+    "passwordAreDifferent": "Пароль отличается",
+    "remindMyPassword": "Восстановить пароль",
+    "changeYourPassword": "Изменить пароль",
+    "registrationSuccessMessage": "Ссылка на подтверждение регистрации была напраавлена на электронную почту {{email}}",
+    "passwordMinLengthValidationError": "Пароль должен содержать не менее {{number}} символов",
+    "remindPasswordSuccessMessage": "Ссылка на восстановление пароля была напраавлена на электронную почту {{email}}",
+    "send": "Отправить",
+    "resetPassword": "Сбросить пароль",
+    "profile": "Профиль"
+  },
+  "profile": {
+    "hello": "Привет",
+    "about": "Информация",
+    "country": "Страна",
+    "selectFile": "Выберите файл"
+  }
+}

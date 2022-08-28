@@ -1,4 +1,4 @@
-import React, {FunctionComponent, createContext, useState, useContext, ReactNode} from 'react';
+import React, {FC, PropsWithChildren, createContext, useState, useContext, ReactNode} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import {Transition, TransitionGroup} from 'react-transition-group';
 
@@ -15,16 +15,16 @@ const {Provider} = ToastContext;
 
 type ToastsProps = {};
 
-const Toasts: FunctionComponent<ToastsProps> = ({children}) => {
+const Toasts: FC<PropsWithChildren<ToastsProps>> = ({children}) => {
   const [toastList, setToastList] = useState<ToastObject[]>([]);
 
-  const has = (id: string) => {
-    if (!toastList.length) {
-      return false;
-    }
-
-    return Boolean(!!toastList.find((toast) => toast.id === id));
-  };
+  // const has = (id: string) => {
+  //   if (!toastList.length) {
+  //     return false;
+  //   }
+  //
+  //   return Boolean(!!toastList.find((toast) => toast.id === id));
+  // };
 
   const add = (content: ReactNode, options: ToastOptions, title?: string): string => {
     const id = uuidv4();

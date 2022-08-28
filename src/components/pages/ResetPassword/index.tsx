@@ -34,7 +34,7 @@ const ResetPassword: FC = () => {
 
   const handleSubmit = async (data: FieldValues) => {
     if (tokenController.isLoggedIn()) {
-      navigate(PAGES.HOME);
+      navigate(PAGES.HOME, { replace: true });
       return;
     }
     const token = new URLSearchParams(location.search).get('token');
@@ -43,7 +43,7 @@ const ResetPassword: FC = () => {
     if (resetPasswordResult && !resetPasswordResult.isLoggedIn) {
       addToast(<div>{resetPasswordResult.result}</div>, {appearance: 'error'}, t('common.error'));
     } else {
-      navigate(PAGES.HOME);
+      navigate(PAGES.HOME, { replace: true });
     }
   };
 

@@ -47,7 +47,7 @@ const Account = () => {
       if (!isLoggedIn) {
         switch (actionId) {
           case UNAUTHORIZED_USER_OPTION_IDS.LOGIN:
-            navigate(PAGES.LOGIN);
+            navigate(PAGES.LOGIN, { replace: true });
             break;
 
           default:
@@ -57,13 +57,13 @@ const Account = () => {
         switch (actionId) {
           case AUTHORIZED_USER_OPTION_IDS.LOGOUT:
             await tokenController.logOut();
-            navigate(PAGES.HOME);
+            navigate(PAGES.HOME, { replace: true });
             break;
           case AUTHORIZED_USER_OPTION_IDS.PROFILE:
-            navigate(PAGES.PROFILE);
+            navigate(PAGES.PROFILE, { replace: true });
             break;
           case AUTHORIZED_USER_OPTION_IDS.TOURNAMENTS:
-            navigate(PAGES.TOURNAMENTS);
+            navigate(PAGES.TOURNAMENTS, { replace: true });
             break;
 
           default:
@@ -86,6 +86,7 @@ const Account = () => {
           <span>{profile.username}</span>
           {profile.imageId ? (
             <img
+              alt={''}
               className={styles.logo}
               src={`${pupa(IMAGE_ENDPOINTS.GET_SCALED_IMAGE, {
                 container: IMAGE_CONTAINERS.LOGO,

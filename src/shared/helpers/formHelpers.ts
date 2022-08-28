@@ -1,9 +1,9 @@
-import {FieldPath} from 'react-hook-form';
+import {FieldPath, FieldValues} from 'react-hook-form';
 import {DictionaryItem, Nullable, SelectValue, ValidationError} from '@declarations/shared';
 
-type ManualValidationError<FieldValues> = [FieldPath<FieldValues>, {type: string; message: string}];
+type ManualValidationError<TFieldValues extends FieldValues> = [FieldPath<TFieldValues>, {type: string; message: string}];
 
-export const getManualValidationErrors = <FieldValues>(
+export const getManualValidationErrors = <TFieldValues extends FieldValues>(
   errors: ValidationError[],
   errorsMap: {[key: string]: string},
 ) => {
@@ -15,10 +15,10 @@ export const getManualValidationErrors = <FieldValues>(
       return [
         ...acc,
         [errorsMap[error.code], {type: 'manual', message: error.message}],
-      ] as ManualValidationError<FieldValues>[];
+      ] as ManualValidationError<TFieldValues>[];
     }
     return acc;
-  }, [] as ManualValidationError<FieldValues>[]);
+  }, [] as ManualValidationError<TFieldValues>[]);
 };
 
 export const formatSelectOption = (option: Nullable<DictionaryItem>): Nullable<SelectValue> => {

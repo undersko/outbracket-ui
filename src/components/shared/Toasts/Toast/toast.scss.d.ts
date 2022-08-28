@@ -12,6 +12,7 @@ declare namespace ToastScssNamespace {
     entered: string;
     exiting: string;
     exited: string;
+    unmounted: string;
     title: string;
   }
 }

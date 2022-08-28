@@ -1,10 +1,10 @@
-import React, {FC, Fragment} from 'react';
+import React, {FC, PropsWithChildren, Fragment} from 'react';
 
 type HideComponentProps = {
   isHide: Boolean;
 };
 
-const HideComponent: FC<HideComponentProps> = ({children, isHide}) => {
+const HideComponent: FC<PropsWithChildren<HideComponentProps>> = ({children, isHide}) => {
   return !isHide ? <Fragment>{children}</Fragment> : null;
 };
 

@@ -38,7 +38,7 @@ const Login: FC = () => {
 
   const handleSubmit = async (data: FieldValues) => {
     if (tokenController.isLoggedIn()) {
-      navigate(PAGES.HOME);
+      navigate(PAGES.HOME, { replace: true });
       return;
     }
     const logInResult = await tokenController.logIn(data);
@@ -53,7 +53,7 @@ const Login: FC = () => {
         addToast(<div>{logInResult.result}</div>, {appearance: 'error'}, t('common.error'));
       }
     } else {
-      navigate(PAGES.HOME);
+      navigate(PAGES.HOME, { replace: true });
     }
   };
 
@@ -64,7 +64,7 @@ const Login: FC = () => {
         <div className={styles.row}>
           <div className={styles.infoContainer}>
             <span className={styles.registrationQuestion}>{t('login.dontHaveAnAccount')}</span>
-            <Link text={t('login.registration')} onClick={() => navigate(PAGES.REGISTRATION)} />
+            <Link text={t('login.registration')} onClick={() => navigate(PAGES.REGISTRATION, { replace: true })} />
           </div>
           <Form className={styles.signInForm} onSubmit={handleSubmit} formMethods={formMethods}>
             <Input
@@ -97,7 +97,7 @@ const Login: FC = () => {
             <Link
               className={styles.remindMyPassword}
               text={t('login.remindMyPassword')}
-              onClick={() => navigate(PAGES.REMIND_PASSWORD)}
+              onClick={() => navigate(PAGES.REMIND_PASSWORD, { replace: true })}
             />
             <div className={styles.buttonContainer}>
               <Button className={styles.submitButton}>

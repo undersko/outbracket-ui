@@ -41,3 +41,4 @@ orleans.codegen.cs
 #configs
 *.Development.json
 *.Release.json
+.env

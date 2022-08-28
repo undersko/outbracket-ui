@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 
 export type ToastAppearanceTypes = 'error' | 'info' | 'success' | 'warning';
-export type ToastTransitionState = 'entering' | 'entered' | 'exiting' | 'exited';
+export type ToastTransitionState = 'entering' | 'entered' | 'exiting' | 'exited' | 'unmounted';
 
 export type ToastOptions = {
   appearance: ToastAppearanceTypes;

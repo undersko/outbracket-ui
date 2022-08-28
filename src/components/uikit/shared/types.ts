@@ -1,9 +1,9 @@
-import {FieldValues, UseFormReturn, UnpackNestedValue} from 'react-hook-form';
+import {FieldValues, UseFormReturn} from 'react-hook-form';
 import {ReactNode, MouseEvent} from 'react';
 import {RegisterOptions} from 'react-hook-form/dist/types/validator';
 
 export declare type SubmitHandler<TFieldValues extends FieldValues = FieldValues> = (
-  data: UnpackNestedValue<TFieldValues>,
+  data: TFieldValues,
 ) => any;
 
 export type Theme = 'default' | 'ribbon';
@@ -24,10 +24,10 @@ export interface FormFieldComponentProps {
   showErrorMessage?: boolean;
 }
 
-export interface FormComponentProps<FieldValues> {
-  onSubmit: SubmitHandler<FieldValues>;
+export interface FormComponentProps<TFieldValues extends FieldValues> {
+  onSubmit: SubmitHandler<TFieldValues>;
   className?: string;
-  formMethods: UseFormReturn<FieldValues>;
+  formMethods: UseFormReturn<TFieldValues>;
 }
 
 export interface ButtonComponentProps {

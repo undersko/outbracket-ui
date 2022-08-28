@@ -46,7 +46,7 @@ const Select: FC<FormFieldComponentProps & SelectProps> = ({
         defaultValue={defaultValue}
       />
       <HideComponent isHide={!showErrorMessage}>
-        <ErrorMessage text={errors[name]?.message ?? ''} />
+        <ErrorMessage text={errors[name]?.message as string ?? ''} />
       </HideComponent>
     </div>
   );

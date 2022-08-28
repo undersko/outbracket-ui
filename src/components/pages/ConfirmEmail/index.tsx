@@ -21,13 +21,13 @@ const ConfirmEmail: FC = () => {
     const confirmEmail = async () => {
       const token = new URLSearchParams(location.search).get('token');
       if (!token) {
-        navigate(PAGES.HOME);
+        navigate(PAGES.HOME, { replace: true });
       }
       const confirmResult = await tokenController.confirmEmail(token);
       if (confirmResult && !confirmResult.isLoggedIn) {
         addToast(<div>{confirmResult.result}</div>, {appearance: 'error'}, t('common.error'));
       }
-      navigate(PAGES.HOME);
+      navigate(PAGES.HOME, { replace: true });
     };
 
     confirmEmail();

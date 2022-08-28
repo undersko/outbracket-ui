@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
+import React, {FC, PropsWithChildren} from 'react';
 
-const Main: FC = ({children}) => {
+const Main: FC<PropsWithChildren> = ({children}) => {
   return <div>{children}</div>;
 };
 

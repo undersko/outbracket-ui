@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, './build'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -141,8 +143,8 @@ module.exports = {
   ],
   performance: {
     hints: 'warning',
-    maxAssetSize: 200000,
-    maxEntrypointSize: 400000,
+    maxAssetSize: 200000000,
+    maxEntrypointSize: 400000000,
     assetFilter: function (assetFilename) {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
     },
@@ -151,8 +153,9 @@ module.exports = {
     static: './build',
     port: 8080,
     host: 'outbracket',
+    historyApiFallback: true,
     proxy: {
-      '/api': 'http://outbracket:8090',
+      '/api': `http://${process.env.SERVER_IP}:8090`,
     },
   },
   optimization: {

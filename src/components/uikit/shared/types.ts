@@ -2,9 +2,7 @@ import {FieldValues, UseFormReturn} from 'react-hook-form';
 import {ReactNode, MouseEvent} from 'react';
 import {RegisterOptions} from 'react-hook-form/dist/types/validator';
 
-export declare type SubmitHandler<TFieldValues extends FieldValues = FieldValues> = (
-  data: TFieldValues,
-) => any;
+export declare type SubmitHandler<TFieldValues extends FieldValues = FieldValues> = (data: TFieldValues) => any;
 
 export type Theme = 'default' | 'ribbon';
 

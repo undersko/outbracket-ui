@@ -1,6 +1,6 @@
 import React, {ChangeEventHandler, FC, ReactEventHandler, SyntheticEvent, useCallback, useMemo, useState} from 'react';
 import {Nullable} from '@declarations/shared';
-import ReactCrop, {Crop, makeAspectCrop, centerCrop, PixelCrop} from 'react-image-crop';
+import ReactCrop, {Crop, makeAspectCrop, centerCrop, PixelCrop, PercentCrop} from 'react-image-crop';
 import styles from './userPhoto.scss';
 import 'react-image-crop/dist/ReactCrop.css';
 import {useTranslation} from 'react-i18next';
@@ -100,16 +100,9 @@ export const UserPhoto: FC<UserPhotoProps> = ({userPhotoId, crop, onSubmit, hand
     setCrop(crop || newCrop);
   };
 
-  const onComplete: (crop: PixelCrop) => void = (crop) => {
-    const newCrop = (Object.keys(crop) as Array<keyof PixelCrop>).reduce((acc, key) => {
-      if (typeof crop[key] !== 'string') {
-        return {...acc, [key]: Math.round(crop[key] as number)};
-      }
-      return {...acc, [key]: crop[key]};
-    }, {} as Crop);
-
-    setCrop(newCrop);
-  };
+  const onChange: (_: PixelCrop, percentCrop: PercentCrop) => void = useCallback((_, percentCrop) => {
+    setCrop(percentCrop);
+  }, []);
 
   const isCropChanged = useMemo(() => {
     return (
@@ -128,12 +121,11 @@ export const UserPhoto: FC<UserPhotoProps> = ({userPhotoId, crop, onSubmit, hand
         <ReactCrop
           className={styles.crop}
           crop={thisCrop || undefined}
-          onChange={(c) => setCrop(c)}
+          onChange={onChange}
           circularCrop
           aspect={1}
           minWidth={100}
           keepSelection
-          onComplete={onComplete}
         >
           <img
             src={

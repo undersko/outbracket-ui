@@ -66,7 +66,7 @@ const Registration: FC = () => {
         <div className={styles.row}>
           <div className={styles.infoContainer}>
             <span className={styles.loginQuestion}>{t('login.haveAnAccount')}</span>
-            <Link text={t('login.signIn')} onClick={() => navigate(PAGES.LOGIN, { replace: true })} />
+            <Link text={t('login.signIn')} onClick={() => navigate(PAGES.LOGIN, {replace: true})} />
           </div>
           <Form className={styles.signUpForm} onSubmit={handleSubmit} formMethods={formMethods}>
             <Input

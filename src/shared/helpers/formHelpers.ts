@@ -1,7 +1,10 @@
 import {FieldPath, FieldValues} from 'react-hook-form';
 import {DictionaryItem, Nullable, SelectValue, ValidationError} from '@declarations/shared';
 
-type ManualValidationError<TFieldValues extends FieldValues> = [FieldPath<TFieldValues>, {type: string; message: string}];
+type ManualValidationError<TFieldValues extends FieldValues> = [
+  FieldPath<TFieldValues>,
+  {type: string; message: string},
+];
 
 export const getManualValidationErrors = <TFieldValues extends FieldValues>(
   errors: ValidationError[],

@@ -5,7 +5,12 @@ import {Transition} from 'react-transition-group';
 import {ActionDropDownComponentProps} from '../shared/types';
 import styles from './actionDropDown.scss';
 
-const ActionDropDown: FC<PropsWithChildren<ActionDropDownComponentProps>> = ({options, onAction, className, children}) => {
+const ActionDropDown: FC<PropsWithChildren<ActionDropDownComponentProps>> = ({
+  options,
+  onAction,
+  className,
+  children,
+}) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 

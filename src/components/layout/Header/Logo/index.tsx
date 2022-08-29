@@ -8,7 +8,7 @@ const Logo = () => {
   let navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(PAGES.LOGIN, { replace: true });
+    navigate(PAGES.LOGIN, {replace: true});
   };
 
   return (

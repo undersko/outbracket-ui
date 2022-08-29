@@ -42,7 +42,7 @@ const Textarea: FC<FormFieldComponentProps & TextareaProps> = ({
         />
       </div>
       <HideComponent isHide={!showErrorMessage}>
-        <ErrorMessage text={errors[name]?.message as string ?? ''} />
+        <ErrorMessage text={(errors[name]?.message as string) ?? ''} />
       </HideComponent>
     </div>
   );

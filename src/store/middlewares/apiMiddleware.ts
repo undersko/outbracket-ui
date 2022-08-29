@@ -32,6 +32,7 @@ function createApiMiddleware() {
 
       axios.defaults.baseURL = process.env.PUBLIC_URL || '';
       axios.defaults.headers.common['Content-Type'] = 'application/json';
+      axios.defaults.headers.common['Accept-Language'] = 'en-US';
 
       apiStart && dispatch({type: apiStart});
 
